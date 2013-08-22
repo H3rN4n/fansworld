@@ -1,0 +1,14 @@
+.rest
+    div(ng-controller='loginCtrl')
+      .jumbotron  
+        h1 Videos de {{usernameModel}}
+.row
+    .col-lg-12
+        ul.list-unstyled
+            li.col-lg-4.img-thumbnail(data-ng-repeat="mov in movies")
+                img(src='http://placehold.it/320x200', alt='ALT NAME')
+                .caption
+                    h3 Name: {{mov.name}}
+                    p  Time: {{mov.time}}min. / Pts: {{mov.pts}}
+                    p(align='center')
+                        a.btn.btn-primary.btn-block(href='', data-ng-click="lala()") Open

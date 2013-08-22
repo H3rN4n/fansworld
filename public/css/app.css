@@ -1,0 +1,17 @@
+/* app css stylesheet */
+
+body {
+  padding-top:70px;
+}
+
+.col-lg-4 {
+width: 30%;
+margin: 1%;
+}
+button.btn.btn-success{
+	margin-top: 10px;
+}
+
+.navbar-brand{
+	margin-left: 55px;
+}
