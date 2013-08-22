@@ -4,7 +4,7 @@
 angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 'myApp.factories','ngCookies']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.when('/view1', {templateUrl: 'partial/1', controller: MyCtrl1});
-    $routeProvider.when('/view2', {templateUrl: 'partial/2', controller: MyCtrl2});
+    $routeProvider.when('/view1/:movieId', {templateUrl: 'partial/2', controller: MyCtrl1});
     $routeProvider.when('/login', {templateUrl: 'partial/3', controller: loginCtrl});
     $routeProvider.otherwise({redirectTo: '/login'});
     $locationProvider.html5Mode(true);

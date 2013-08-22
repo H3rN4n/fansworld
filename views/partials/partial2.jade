@@ -3,5 +3,24 @@
 		img(src='http://placehold.it/600x300', alt='ALT NAME')
 	.caption
 		h3 Name: Movie 1
+		p Desc: Movie 1
 		p  Time: 20min. / Pts: 9/10
 		p(align='center')
+	.editContainer
+		button.btn.btn-success(data-ng-click="openEditor()") Editar
+		.editor.thumbnail
+			div.control-group.col-lg-12
+				Name 
+				label.control-label(for='name') Name
+				div.controls.col-lg-12
+					input#name.input-xlarge(type='text', name='name', placeholder='', data-ng-model="videoNameModel")
+			div.control-group.col-lg-12
+				Desc 
+				label.control-label(for='name') Desc
+				div.controls.col-lg-12
+					input#desc.input-xlarge(type='text', name='desc', placeholder='', data-ng-model="videoDescModel")
+			div.control-group.col-lg-12
+				File 
+				label.control-label(for='name') File
+				div.controls.col-lg-12
+					input#file.input-xlarge(type='file', name='file', placeholder='', data-ng-model="videoFileModel")
