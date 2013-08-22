@@ -1,5 +1,7 @@
-# Angular Express Bootstrap Seed
+# A Simple App With Angular Express Bootstrap Seed
 
+
+- Angular Express Bootstrap Seed -
 Forked from [btford/angular-express-seed](https://github.com/btford/angular-express-seed) and spiced with [Twitter Bootstrap](https://github.com/twitter/bootstrap). jQuery added for convenience.
 
 Start an awesome app with AngularJS + Bootstrap on the front, Express + Node on the back. This project is an
