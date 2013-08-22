@@ -10,12 +10,14 @@ block body
         span.icon-bar
       a.navbar-brand(href="#") FansWorldDemo
     
-    .collapse.navbar-collapse.navbar-ex1-collapse
+    .collapse.navbar-collapse.navbar-ex1-collapse(ng-controller="loginCtrl")
       ul.nav.navbar-nav
         li
           a(href="view1") Videos
-        li  
-          a(href="view2") Player 
+        li
+          a(href="view2") Perfil
+        li
+          a#logout(href='', data-ng-click="logout()") Logout
   .container      
       div(ng-view)
     hr
