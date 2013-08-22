@@ -2,29 +2,41 @@
 
 /* Controllers */
 
-function MyCtrl1($scope, $location, $cookies, moviesFactory) {
+function MyCtrl1($scope, $location, $cookies, $http, $routeParams, moviesFactory) {
 	$scope.movies = moviesFactory.getMovies();
+
+	$http.get("/get/"+$routeParams.productId).success(function(data) {
+                $scope.record = data;
+                console.log(data);
+    });
+	
+	$scope.openEditor = function(){
+		$('.editor').toggleClass('on');
+	}
 }
-//MyCtrl1.$inject = [];
 
 function loginCtrl($scope, $http, $location, $browser, $cookies){
 	$scope.login = 0;
 	$scope.usernameModel = 'FansWorldUser';
 	$scope.passwordModel = 'demo';
+	$scope.activeElement;
 
 	$scope.userData = null;
 
 	$scope.checklogin = function(){
 		if($cookies.loginCookie != 'login'){
+			$('.navbar-nav>li a').css('display','none');
 			$location.path("/login");
+		}else{
+			$scope.activeElement = 'on';
+			$('.navbar-nav>li a').css('display','block');
+			$location.path("/view1");
 		}
 	}
 
 	$scope.init = function(){
   		$scope.checklogin();
 	}
-
-	$scope.init();
 
 	$scope.login = function(usernameModel,passwordModel){
 		$http({method: 'GET', url: '/api/name'}).
@@ -46,8 +58,11 @@ function loginCtrl($scope, $http, $location, $browser, $cookies){
 		return 0;
 		});
 	}
-}
 
-function MyCtrl2() {
+	$scope.logout = function(){
+		$cookies.loginCookie = 'logout';
+		$scope.activeElement = 'off';
+	}
+
+	$scope.checklogin();
 }
-MyCtrl2.$inject = [];
