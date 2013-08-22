@@ -2,26 +2,29 @@
 
 /* Controllers */
 
-function MyCtrl1($scope, moviesFactory) {
+function MyCtrl1($scope, $location, $cookies, moviesFactory) {
 	$scope.movies = moviesFactory.getMovies();
 }
 //MyCtrl1.$inject = [];
 
-function loginCtrl($scope, $http, $location){
+function loginCtrl($scope, $http, $location, $browser, $cookies){
 	$scope.login = 0;
 	$scope.usernameModel = 'FansWorldUser';
 	$scope.passwordModel = 'demo';
 
 	$scope.userData = null;
 
-	$scope.init = function(){
-  		$scope.checklogin();
-	}
 	$scope.checklogin = function(){
 		if($cookies.loginCookie != 'login'){
 			$location.path("/login");
 		}
 	}
+
+	$scope.init = function(){
+  		$scope.checklogin();
+	}
+
+	$scope.init();
 
 	$scope.login = function(usernameModel,passwordModel){
 		$http({method: 'GET', url: '/api/name'}).
@@ -29,8 +32,8 @@ function loginCtrl($scope, $http, $location){
 		$scope.userData = data;
 		if($scope.userData != null){
 			if($scope.userData.name == usernameModel && $scope.userData.passwd == passwordModel){
-				//var loginCookie = $cookies.loginCookie;
-				//$cookies.loginCookie = 'login';
+				var loginCookie = $cookies.loginCookie;
+				$cookies.loginCookie = 'login';
 				$location.path("/view1");
 			}else{
 				alert('Username or Password Incorrect!')
