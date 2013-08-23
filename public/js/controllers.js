@@ -30,7 +30,10 @@ function loginCtrl($scope, $http, $location, $browser, $cookies){
 		}else{
 			$scope.activeElement = 'on';
 			$('.navbar-nav>li a').css('display','block');
-			$location.path("/view1");
+			var loc = $location.path();
+			if(loc == '/login'){
+				$location.path("/view1");
+			};
 		}
 	}
 
