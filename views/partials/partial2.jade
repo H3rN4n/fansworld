@@ -7,7 +7,7 @@
 		p  Time: 20min. / Pts: 9/10
 		p(align='center')
 	.editContainer
-		button.btn.btn-success(data-ng-click="openEditor()") Editar
+		button.btn.btn-success(data-ng-click="openEditor()") Edit
 		.editor.thumbnail
 			div.control-group.col-lg-12
 				Name 
@@ -21,6 +21,9 @@
 					input#desc.input-xlarge(type='text', name='desc', placeholder='', data-ng-model="videoDescModel")
 			div.control-group.col-lg-12
 				File 
-				label.control-label(for='name') File
 				div.controls.col-lg-12
+					label.control-label(for='name') File
 					input#file.input-xlarge(type='file', name='file', placeholder='', data-ng-model="videoFileModel")
+			div.control-group.col-lg-12
+				br
+				button.btn.btn-info(data-ng-click="save()") Save
