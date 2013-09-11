@@ -58,7 +58,7 @@ function loginCtrl($scope, $http, $location, $browser, $cookies){
   		$scope.checklogin();
 	}
 
-	$scope.login = function(usernameModel,passwordModel){
+	$scope.login = function(usernameModel, passwordModel){
 		$http({method: 'GET', url: '/api/name'}).
 		success(function(data, status, headers, config) {
 		$scope.userData = data;
