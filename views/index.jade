@@ -18,13 +18,18 @@ block body
           a(href="view2") Perfil
         li
           a#logout(href='', data-ng-click="logout()") Logout
+        form#custom-search-form.form-search.form-horizontal.pull-right
+          .input-append.span12
+            input#buscar.search-query(type='text', placeholder='Buscar')
+            button.btn(type='submit')
+              i.icon-search
   .container      
-      div(ng-view)
+      div#ngView(ng-view)
     hr
   
   script(src='js/lib/angular/angular.js')
   script(src='js/lib/angular/angular-cookies.js')
-  script(src='js/require.js')
+  script(src='js/smoke.js')
   script(src='js/app.js')
   script(src='js/services.js')
   script(src='js/factories.js')
@@ -33,3 +38,4 @@ block body
   script(src='js/directives.js')
   script(src='js/lib/jquery/jquery-2.0.3.min.js')
   script(src='bootstrap/js/bootstrap.min.js')
+  script(src='js/jquery.tokeninput.js')

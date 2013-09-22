@@ -8,6 +8,8 @@
 		p(align='center')
 	.editContainer
 		button.btn.btn-success(data-ng-click="openEditor()") Edit
+	div#msg
+	from(method='post')
 		.editor.thumbnail
 			div.control-group.col-lg-12
 				Name 
@@ -26,4 +28,5 @@
 					input#file.input-xlarge(type='file', name='file', placeholder='', data-ng-model="videoFileModel")
 			div.control-group.col-lg-12
 				br
-				button.btn.btn-info(data-ng-click="save()") Save
+				input.btn.btn-info(type='submit', value="Guardar", data-ng-click="save()")
+				//input.btn.btn-info(type="submit", value="Guardar")

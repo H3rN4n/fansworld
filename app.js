@@ -4,8 +4,6 @@
  */
 
 var express = require('express'),
-  routes = require('./routes'),
-  api = require('./routes/api'),
   http = require('http'),
   path = require('path');
 
@@ -26,6 +24,8 @@ app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
+require('./routes')(app);
+
 // development only
 if (app.get('env') === 'development') {
    app.use(express.errorHandler());
@@ -35,18 +35,6 @@ if (app.get('env') === 'development') {
 if (app.get('env') === 'production') {
   // TODO
 }; 
-
-
-
-// Routes
-app.get('/', routes.index);
-app.get('/partial/:name', routes.partial);
-
-// JSON API
-app.get('/api/name', api.name);
-
-// redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
 
 /**
 * Start Server

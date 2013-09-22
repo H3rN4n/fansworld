@@ -1,0 +1,15 @@
+form.form-horizontal(action='', method='POST')
+	fieldset#legend
+		div.legend Login
+		div.control-group
+			Username 
+			label.control-label(for='username') Username
+		div.controls
+			input#username.input-xlarge(type='text', name='username', placeholder='', data-ng-model="usernameModel")
+		div.control-group
+			Password
+			label.control-label(for='password') Password
+		div.controls
+			input#password.input-xlarge(type='password', name='password', placeholder='', data-ng-model="passwordModel")
+		div.control-group
+			button.btn.btn-success(data-ng-click='login(usernameModel,passwordModel)') Login

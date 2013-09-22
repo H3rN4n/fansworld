@@ -14,6 +14,7 @@ button.btn.btn-success{
 
 .navbar-brand{
 	margin-left: 55px;
+	margin-top: 10px;
 }
 
 .nav>li>a.off{
@@ -35,4 +36,67 @@ button.btn.btn-success{
 .editor.on{
 	display:block;
 	height: 250px;
+}
+
+#custom-search-form {
+    margin:0;
+    padding: 0;
+}
+
+#custom-search-form .search-query, ul.token-input-list {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#custom-search-form button , ul.token-input-list{
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.search-query:focus + button {
+    z-index: 3;   
+}
+.navbar-nav {
+	width: 80%;
+}
+#buscar, ul.token-input-list{
+	padding: 5px;
+	width: 250px;
+	outline: 0px;
+	border: 1px solid #ddd;
+	transition: 2s;
+	margin-top: 5px;
+}
+#buscar:focus, ul.token-input-list:focus{
+	width: 250px;
+}
+
+#ngView{
+	margin-top: 20px;
+}
+.input-append{
+	margin-top: 0px;
+}
+.navbar-nav{
+	height: 48px;
+	margin-top: 10px;
+
 }

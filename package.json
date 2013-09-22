@@ -5,6 +5,6 @@
 	"dependencies": {
 		"express": "~3.2.6",
 		"jade": "~0.31.2",
-		"mongoose": "3.6.17"
+		"mongodb": "*"
 	}
 }
